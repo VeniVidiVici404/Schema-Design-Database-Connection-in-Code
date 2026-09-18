@@ -120,3 +120,11 @@ forward (before the next milestone), we plan to switch to short-lived
 feature branches with at least one teammate's approval before merging, so
 that our review process is reflected in the repo's history rather than just
 described here.
+
+## 7. Mock Data Disclaimer
+The mock data in `sql/02_mock_data.sql` was generated with the help of AI.
+Cities, neighborhoods, and general market patterns (rents, regulations,
+pricing ranges) were inspired by real-world context to make the data
+realistic, but the specific values, addresses, hosts, and listings are
+fictional and were not scraped or sourced from any real Airbnb dataset.
+
