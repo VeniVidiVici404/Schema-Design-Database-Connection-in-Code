@@ -120,13 +120,3 @@ forward (before the next milestone), we plan to switch to short-lived
 feature branches with at least one teammate's approval before merging, so
 that our review process is reflected in the repo's history rather than just
 described here.
-
-## 7. Status
-
-- [x] GitHub repository set up
-- [x] ERD converted to relational schema
-- [x] Schema implemented with constraints and data types
-- [x] CRUD scripts written
-- [x] Mock data populated
-- [x] 5 advanced queries added
-- [ ] TA feedback pending
