@@ -114,6 +114,13 @@ scratch.
 - Commit messages describe *what* changed and *why* (e.g. "Add CHECK
   constraint to prevent negative nightly prices").
 
+**Current state:** given our timeline for this submission, all work so far
+was pushed directly to `main` rather than through branches/PRs. Going
+forward (before the next milestone), we plan to switch to short-lived
+feature branches with at least one teammate's approval before merging, so
+that our review process is reflected in the repo's history rather than just
+described here.
+
 ## 7. Status
 
 - [x] GitHub repository set up
