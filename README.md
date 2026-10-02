@@ -19,7 +19,7 @@ our schema, normalization, and constraints with real market data.
 
 ## 2. Stakeholder video presentation (Week 4)
 
-[![Stakeholder Video Presentation](video_thumbnail.png)](Database%20Project%20Pitch.mp4)
+[![Stakeholder Video Presentation](https://raw.githubusercontent.com/VeniVidiVici404/Schema-Design-Database-Connection-in-Code/main/Databases%20Project%20Pitch.jpg)](https://raw.githubusercontent.com/VeniVidiVici404/Schema-Design-Database-Connection-in-Code/main/Database%20Project%20Pitch.mp4)
 
 > **[Watch the Project Pitch Video (MP4)](Database%20Project%20Pitch.mp4)**  
 > *When homes become holiday rentals: What our database can tell cities about short-term rentals and housing.*  
