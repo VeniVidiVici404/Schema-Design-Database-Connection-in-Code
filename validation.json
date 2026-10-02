@@ -1,0 +1,235 @@
+{
+  "engine": "SQLite portability reference, not MySQL",
+  "checks": [
+    {
+      "check": "row_count_city",
+      "result": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "check": "row_count_neighborhood",
+      "result": 73,
+      "expected": 73,
+      "passed": true
+    },
+    {
+      "check": "row_count_host",
+      "result": 4595,
+      "expected": 4595,
+      "passed": true
+    },
+    {
+      "check": "row_count_property",
+      "result": 15293,
+      "expected": 15293,
+      "passed": true
+    },
+    {
+      "check": "row_count_host_property",
+      "result": 15293,
+      "expected": 15293,
+      "passed": true
+    },
+    {
+      "check": "row_count_platform",
+      "result": 1,
+      "expected": 1,
+      "passed": true
+    },
+    {
+      "check": "row_count_listing",
+      "result": 15293,
+      "expected": 15293,
+      "passed": true
+    },
+    {
+      "check": "row_count_listing_snapshot",
+      "result": 15293,
+      "expected": 15293,
+      "passed": true
+    },
+    {
+      "check": "row_count_housing_market_observation",
+      "result": 438,
+      "expected": 438,
+      "passed": true
+    },
+    {
+      "check": "row_count_regulation",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "row_count_regulation_area",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "invalid_prices",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "invalid_availability",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "invalid_capacity",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "invalid_minimum_stay",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "invalid_rents",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "invalid_income",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "positive_known_rent_count",
+      "result": 344,
+      "expected": 344,
+      "passed": true
+    },
+    {
+      "check": "income_rows_2023",
+      "result": 73,
+      "expected": 73,
+      "passed": true
+    },
+    {
+      "check": "unique_source_listing_ids",
+      "result": 15293,
+      "expected": 15293,
+      "passed": true
+    },
+    {
+      "check": "orphan_income_rows",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    },
+    {
+      "check": "reject_negative_price",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "reject_invalid_availability",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "reject_invalid_capacity",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "reject_orphan_property",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "reject_duplicate_external_listing",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "reject_zero_rent",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "reject_zero_income",
+      "result": true,
+      "expected": true,
+      "passed": true
+    },
+    {
+      "check": "sqlite_integrity_check",
+      "result": "ok",
+      "expected": "ok",
+      "passed": true
+    },
+    {
+      "check": "sqlite_foreign_key_violations",
+      "result": 0,
+      "expected": 0,
+      "passed": true
+    }
+  ],
+  "query_outcomes": [
+    {
+      "query": "original_1",
+      "rows": 0
+    },
+    {
+      "query": "original_2",
+      "rows": 1607
+    },
+    {
+      "query": "original_3",
+      "rows": 15293
+    },
+    {
+      "query": "original_4",
+      "rows": 0
+    },
+    {
+      "query": "original_5",
+      "rows": 0
+    },
+    {
+      "query": "adapted_1",
+      "rows": 69
+    },
+    {
+      "query": "adapted_2",
+      "rows": 1607
+    },
+    {
+      "query": "adapted_3",
+      "rows": 13355
+    },
+    {
+      "query": "adapted_4",
+      "rows": 0
+    },
+    {
+      "query": "adapted_5",
+      "rows": 0
+    },
+    {
+      "query": "adapted_6",
+      "rows": 243
+    },
+    {
+      "query": "adapted_7",
+      "rows": 69
+    }
+  ]
+}
