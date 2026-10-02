@@ -66,7 +66,7 @@ For a functional dependency X → A, 3NF requires X to be a superkey or A to be 
 | platform | platform_id; also name | name, website_url |
 | listing | listing_id | source ID, property_id, host_id, platform_id, room type, source license text, dates, minimum nights |
 | listing_snapshot | snapshot_id; also listing_id + snapshot_date | nightly price, future availability, activity, reviews |
-| housing_market_observation | observation_id; also neighborhood_id + observation_date | rent, sale price and other area-period statistics |
+| housing_market_observation | observation_id; also neighborhood_id + observation_date | rent, gross household income, sale price and other area-period statistics |
 
 Source host/listing IDs are unique among populated records. Because the columns are nullable, their SQL UNIQUE declarations are not universal relational candidate keys. Primary keys remain the authoritative identifiers. The external listing key is platform-scoped.
 
@@ -80,9 +80,9 @@ For composite-key association tables, any relationship attributes depend on the 
 
 ### 3NF
 
-City descriptions remain in city; neighborhood descriptions remain in neighborhood; host attributes remain in host; platform descriptions remain in platform. Imported listings do not repeat these descriptions. Rent observations do not repeat district/city/neighborhood names or quarter labels as independent redundant attributes. No additional non-key determinant requiring decomposition was established by the source semantics. Missing data, repeated licenses, and unsupported categories are data-quality/domain issues, not automatically normal-form violations.
+City descriptions remain in city; neighborhood descriptions remain in neighborhood; host attributes remain in host; platform descriptions remain in platform. Imported listings do not repeat these descriptions. Rent and income observations do not repeat district/city/neighborhood names or period labels as independent redundant attributes. Gross household income is stored at the neighborhood-year observation level, alongside other area-period facts; it is not copied into individual listing rows. No additional non-key determinant requiring decomposition was established by the source semantics. Missing data, repeated licenses, and unsupported categories are data-quality/domain issues, not automatically normal-form violations.
 
-Conclusion: no new 1NF–3NF violation was identified for the normalized imported representation under the stated assumptions. No further table decomposition was required; changes concern domains, nullability, source identities and a rent check. This is a qualified assessment, not a proof that every future interpretation or source will preserve the same dependencies.
+Conclusion: no new 1NF–3NF violation was identified for the normalized imported representation under the stated assumptions. No further table decomposition was required; changes concern domains, nullability, source identities, and positive-value checks for known rent and income. The income aggregation is performed before import, and the resulting value is stored once per neighborhood and reference year. This is a qualified assessment, not a proof that every future interpretation or source will preserve the same dependencies.
 
 ### Assumptions and remaining design questions
 
