@@ -25,9 +25,6 @@ our schema, normalization, and constraints with real market data.
 > *When homes become holiday rentals: What our database can tell cities about short-term rentals and housing.*  
 > Click the thumbnail above or the direct link to play the video.
 
-Alternatively, direct HTML5 stream:
-https://github.com/VeniVidiVici404/Schema-Design-Database-Connection-in-Code/raw/main/Database%20Project%20Pitch.mp4
-
 ## 3. Repository structure
 
 ```
