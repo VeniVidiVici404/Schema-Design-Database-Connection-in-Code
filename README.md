@@ -53,15 +53,15 @@ our schema, normalization, and constraints with real market data.
 │   ├── generate_import.py                
 │   └── prepare_income_data.py           
 └── sql/
-├── 01_schema.sql                    
-├── 02_mock_data.sql                 
-├── 03_crud_operations.sql            
-├── 04_advanced_queries.sql        
-├── adapted_queries.sql             
-├── import_income_data.sql            
-├── original_queries.sql        
-├── real_data_schema.sql             
-└── validation.sql                      
+    ├── 01_schema.sql                    
+    ├── 02_mock_data.sql                 
+    ├── 03_crud_operations.sql            
+    ├── 04_advanced_queries.sql        
+    ├── adapted_queries.sql             
+    ├── import_income_data.sql            
+    ├── original_queries.sql        
+    ├── real_data_schema.sql             
+    └── validation.sql                      
 ```
 
 ## 4. Entity overview
