@@ -1,0 +1,74 @@
+neighborhood_id,city_id,name
+1,1,el Raval
+2,1,el Barri Gòtic
+3,1,la Barceloneta
+4,1,"Sant Pere, Santa Caterina i la Ribera"
+5,1,el Fort Pienc
+6,1,la Sagrada Família
+7,1,la Dreta de l'Eixample
+8,1,l'Antiga Esquerra de l'Eixample
+9,1,la Nova Esquerra de l'Eixample
+10,1,Sant Antoni
+11,1,el Poble Sec - AEI Parc Montjuïc
+12,1,la Marina del Prat Vermell - AEI Zona Franca
+13,1,la Marina de Port
+14,1,la Font de la Guatlla
+15,1,Hostafrancs
+16,1,la Bordeta
+17,1,Sants - Badal
+18,1,Sants
+19,1,les Corts
+20,1,la Maternitat i Sant Ramon
+21,1,Pedralbes
+22,1,"Vallvidrera, el Tibidabo i les Planes"
+23,1,Sarrià
+24,1,les Tres Torres
+25,1,Sant Gervasi - la Bonanova
+26,1,Sant Gervasi - Galvany
+27,1,el Putxet i el Farró
+28,1,Vallcarca i els Penitents
+29,1,el Coll
+30,1,la Salut
+31,1,la Vila de Gràcia
+32,1,el Camp d'en Grassot i Gràcia Nova
+33,1,el Baix Guinardó
+34,1,Can Baró
+35,1,el Guinardó
+36,1,la Font d'en Fargues
+37,1,el Carmel
+38,1,la Teixonera
+39,1,Sant Genís dels Agudells
+40,1,Montbau
+41,1,la Vall d'Hebron
+42,1,la Clota
+43,1,Horta
+44,1,Vilapicina i la Torre Llobeta
+45,1,Porta
+46,1,el Turó de la Peira
+47,1,Can Peguera
+48,1,la Guineueta
+49,1,Canyelles
+50,1,les Roquetes
+51,1,Verdun
+52,1,la Prosperitat
+53,1,la Trinitat Nova
+54,1,Torre Baró
+55,1,Ciutat Meridiana
+56,1,Vallbona
+57,1,la Trinitat Vella
+58,1,Baró de Viver
+59,1,el Bon Pastor
+60,1,Sant Andreu
+61,1,la Sagrera
+62,1,el Congrés i els Indians
+63,1,Navas
+64,1,el Camp de l'Arpa del Clot
+65,1,el Clot
+66,1,el Parc i la Llacuna del Poblenou
+67,1,la Vila Olímpica del Poblenou
+68,1,el Poblenou
+69,1,Diagonal Mar i el Front Marítim del Poblenou
+70,1,el Besòs i el Maresme
+71,1,Provençals del Poblenou
+72,1,Sant Martí de Provençals
+73,1,la Verneda i la Pau

@@ -1,0 +1,74 @@
+neighborhood_id,neighborhood_name,observation_date,census_sections_aggregated,avg_gross_household_income
+1,el Raval,2023-01-01,21,38545.29
+2,el Barri Gòtic,2023-01-01,9,48240.44
+3,la Barceloneta,2023-01-01,11,39951.18
+4,"Sant Pere, Santa Caterina i la Ribera",2023-01-01,13,47251.00
+5,el Fort Pienc,2023-01-01,20,63660.55
+6,la Sagrada Família,2023-01-01,34,58932.91
+7,la Dreta de l'Eixample,2023-01-01,29,85869.93
+8,l'Antiga Esquerra de l'Eixample,2023-01-01,26,76350.65
+9,la Nova Esquerra de l'Eixample,2023-01-01,40,67734.25
+10,Sant Antoni,2023-01-01,24,59947.29
+11,el Poble Sec - AEI Parc Montjuïc,2023-01-01,24,45978.46
+12,la Marina del Prat Vermell - AEI Zona Franca,2023-01-01,1,42100.00
+13,la Marina de Port,2023-01-01,17,45693.18
+14,la Font de la Guatlla,2023-01-01,7,54379.71
+15,Hostafrancs,2023-01-01,10,51380.20
+16,la Bordeta,2023-01-01,13,53011.46
+17,Sants - Badal,2023-01-01,16,50748.00
+18,Sants,2023-01-01,29,56665.34
+19,les Corts,2023-01-01,35,79020.86
+20,la Maternitat i Sant Ramon,2023-01-01,15,70629.33
+21,Pedralbes,2023-01-01,7,135485.29
+22,"Vallvidrera, el Tibidabo i les Planes",2023-01-01,3,104335.00
+23,Sarrià,2023-01-01,16,119408.06
+24,les Tres Torres,2023-01-01,11,143505.09
+25,Sant Gervasi - la Bonanova,2023-01-01,18,120597.89
+26,Sant Gervasi - Galvany,2023-01-01,31,120036.00
+27,el Putxet i el Farró,2023-01-01,19,84040.05
+28,Vallcarca i els Penitents,2023-01-01,11,74492.09
+29,el Coll,2023-01-01,5,54127.80
+30,la Salut,2023-01-01,10,67589.50
+31,la Vila de Gràcia,2023-01-01,36,60418.28
+32,el Camp d'en Grassot i Gràcia Nova,2023-01-01,25,63815.52
+33,el Baix Guinardó,2023-01-01,19,56618.00
+34,Can Baró,2023-01-01,7,53227.86
+35,el Guinardó,2023-01-01,25,54305.96
+36,la Font d'en Fargues,2023-01-01,7,72170.71
+37,el Carmel,2023-01-01,22,39915.50
+38,la Teixonera,2023-01-01,8,44849.38
+39,Sant Genís dels Agudells,2023-01-01,5,47493.00
+40,Montbau,2023-01-01,4,49339.50
+41,la Vall d'Hebron,2023-01-01,4,59258.75
+42,la Clota,2023-01-01,1,54643.00
+43,Horta,2023-01-01,21,54199.14
+44,Vilapicina i la Torre Llobeta,2023-01-01,19,50007.21
+45,Porta,2023-01-01,18,44281.22
+46,el Turó de la Peira,2023-01-01,10,39397.70
+47,Can Peguera,2023-01-01,2,31137.50
+48,la Guineueta,2023-01-01,11,49704.36
+49,Canyelles,2023-01-01,5,46988.60
+50,les Roquetes,2023-01-01,10,36396.00
+51,Verdun,2023-01-01,8,36582.25
+52,la Prosperitat,2023-01-01,20,41238.15
+53,la Trinitat Nova,2023-01-01,5,33807.60
+54,Torre Baró,2023-01-01,2,36906.50
+55,Ciutat Meridiana,2023-01-01,6,33237.00
+56,Vallbona,2023-01-01,1,36506.00
+57,la Trinitat Vella,2023-01-01,5,38581.60
+58,Baró de Viver,2023-01-01,2,34248.00
+59,el Bon Pastor,2023-01-01,7,45608.29
+60,Sant Andreu,2023-01-01,39,55881.92
+61,la Sagrera,2023-01-01,20,52627.40
+62,el Congrés i els Indians,2023-01-01,9,52398.33
+63,Navas,2023-01-01,13,53934.69
+64,el Camp de l'Arpa del Clot,2023-01-01,25,54354.24
+65,el Clot,2023-01-01,17,56688.94
+66,el Parc i la Llacuna del Poblenou,2023-01-01,9,61097.00
+67,la Vila Olímpica del Poblenou,2023-01-01,5,100049.40
+68,el Poblenou,2023-01-01,20,64824.00
+69,Diagonal Mar i el Front Marítim del Poblenou,2023-01-01,7,72976.14
+70,el Besòs i el Maresme,2023-01-01,13,39743.23
+71,Provençals del Poblenou,2023-01-01,12,54786.83
+72,Sant Martí de Provençals,2023-01-01,18,49005.67
+73,la Verneda i la Pau,2023-01-01,21,45614.57
