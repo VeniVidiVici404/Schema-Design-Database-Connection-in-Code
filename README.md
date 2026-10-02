@@ -29,15 +29,39 @@ our schema, normalization, and constraints with real market data.
 
 ```
 .
-├── README.md
+├── README.md                               
+├── Database Project Pitch.mp4              
+├── Databases Project Pitch.png            
+├── .gitignore                              
+├── data/
+│   ├── 2023_atles_renda_bruta_llar.csv     
+│   ├── neighborhood.csv                    
+│   └── neighborhood_income_2023.csv        
 ├── docs/
-│   ├── erd.pdf                   <- original ERD + normalization walkthrough
-│   └── normalization.md           <- written summary of the 1NF/2NF/3NF process
+│   ├── dataset_inspection.md               
+│   ├── erd.pdf                             
+│   ├── import_validation_queries.md        
+│   ├── income_dataset_addendum.md         
+│   ├── mapping_and_cleaning.md             
+│   ├── normalization.md                   
+│   └── sql_review.md                      
+├── results/
+│   ├── income_airbnb_comparison.csv       
+│   └── validation.json                    
+├── scripts/
+│   ├── clean_real_data.py                
+│   ├── generate_import.py                
+│   └── prepare_income_data.py           
 └── sql/
-    ├── 01_schema.sql              <- DDL: tables, keys, constraints, indexes
-    ├── 02_mock_data.sql           <- realistic sample data (INSERTs)
-    ├── 03_crud_operations.sql     <- example Create / Read / Update / Delete statements
-    └── 04_advanced_queries.sql    <- 5 advanced analytical queries
+├── 01_schema.sql                    
+├── 02_mock_data.sql                 
+├── 03_crud_operations.sql            
+├── 04_advanced_queries.sql        
+├── adapted_queries.sql             
+├── import_income_data.sql            
+├── original_queries.sql        
+├── real_data_schema.sql             
+└── validation.sql                      
 ```
 
 ## 4. Entity overview
