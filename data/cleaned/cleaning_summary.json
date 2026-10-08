@@ -1,0 +1,33 @@
+{
+  "input_listing_rows": 15293,
+  "unique_listings": 15293,
+  "removed_exact_duplicates": 0,
+  "rent_observations": 365,
+  "unique_rent_keys": 365,
+  "positive_rent_observations": 344,
+  "zero_rent_cells_as_null": 21,
+  "counts": {
+    "city": 1,
+    "neighborhood": 73,
+    "host": 4595,
+    "property": 15293,
+    "host_property": 15293,
+    "platform": 1,
+    "listing": 15293,
+    "listing_snapshot": 15293,
+    "housing_market_observation": 365
+  },
+  "missing_prices": 1938,
+  "missing_bedrooms": 2562,
+  "verification_conflict_hosts": 0,
+  "verification_conflict_source_ids": [],
+  "all_neighborhood_names_mapped": true,
+  "listing_dates": {
+    "2026-06-25": 10695,
+    "2026-07-03": 1738,
+    "2026-06-24": 2340,
+    "2026-07-02": 520
+  },
+  "currency": "EUR",
+  "rent_unit": "EUR/m2/month"
+}

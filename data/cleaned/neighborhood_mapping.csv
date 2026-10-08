@@ -1,0 +1,70 @@
+source_name,canonical_name,neighborhood_id,rule
+Can Baró,Can Baró,34,NFC and trim
+Ciutat Meridiana,Ciutat Meridiana,55,NFC and trim
+Diagonal Mar i el Front Marítim del Poblenou,Diagonal Mar i el Front Marítim del Poblenou,69,NFC and trim
+Horta,Horta,43,NFC and trim
+Hostafrancs,Hostafrancs,15,NFC and trim
+Montbau,Montbau,40,NFC and trim
+Navas,Navas,63,NFC and trim
+Pedralbes,Pedralbes,21,NFC and trim
+Porta,Porta,45,NFC and trim
+Provençals del Poblenou,Provençals del Poblenou,71,NFC and trim
+Sant Andreu,Sant Andreu,60,NFC and trim
+Sant Antoni,Sant Antoni,10,NFC and trim
+Sant Genís dels Agudells,Sant Genís dels Agudells,39,NFC and trim
+Sant Gervasi - Galvany,Sant Gervasi - Galvany,26,NFC and trim
+Sant Gervasi - la Bonanova,Sant Gervasi - la Bonanova,25,NFC and trim
+Sant Martí de Provençals,Sant Martí de Provençals,72,NFC and trim
+"Sant Pere, Santa Caterina i la Ribera","Sant Pere, Santa Caterina i la Ribera",4,NFC and trim
+Sants,Sants,18,NFC and trim
+Sants - Badal,Sants - Badal,17,NFC and trim
+Sarrià,Sarrià,23,NFC and trim
+Torre Baró,Torre Baró,54,NFC and trim
+Vallcarca i els Penitents,Vallcarca i els Penitents,28,NFC and trim
+"Vallvidrera, el Tibidabo i les Planes","Vallvidrera, el Tibidabo i les Planes",22,NFC and trim
+Verdun,Verdun,51,NFC and trim
+Vilapicina i la Torre Llobeta,Vilapicina i la Torre Llobeta,44,NFC and trim
+el Baix Guinardó,el Baix Guinardó,33,NFC and trim
+el Barri Gòtic,el Barri Gòtic,2,NFC and trim
+el Besòs i el Maresme,el Besòs i el Maresme,70,NFC and trim
+el Bon Pastor,el Bon Pastor,59,NFC and trim
+el Camp d'en Grassot i Gràcia Nova,el Camp d'en Grassot i Gràcia Nova,32,NFC and trim
+el Camp de l'Arpa del Clot,el Camp de l'Arpa del Clot,64,NFC and trim
+el Carmel,el Carmel,37,NFC and trim
+el Clot,el Clot,65,NFC and trim
+el Coll,el Coll,29,NFC and trim
+el Congrés i els Indians,el Congrés i els Indians,62,NFC and trim
+el Fort Pienc,el Fort Pienc,5,NFC and trim
+el Guinardó,el Guinardó,35,NFC and trim
+el Parc i la Llacuna del Poblenou,el Parc i la Llacuna del Poblenou,66,NFC and trim
+el Poble Sec,el Poble Sec - AEI Parc Montjuïc,11,explicit alias
+el Poblenou,el Poblenou,68,NFC and trim
+el Putxet i el Farró,el Putxet i el Farró,27,NFC and trim
+el Raval,el Raval,1,NFC and trim
+el Turó de la Peira,el Turó de la Peira,46,NFC and trim
+l'Antiga Esquerra de l'Eixample,l'Antiga Esquerra de l'Eixample,8,NFC and trim
+la Barceloneta,la Barceloneta,3,NFC and trim
+la Bordeta,la Bordeta,16,NFC and trim
+la Clota,la Clota,42,NFC and trim
+la Dreta de l'Eixample,la Dreta de l'Eixample,7,NFC and trim
+la Font d'en Fargues,la Font d'en Fargues,36,NFC and trim
+la Font de la Guatlla,la Font de la Guatlla,14,NFC and trim
+la Guineueta,la Guineueta,48,NFC and trim
+la Marina de Port,la Marina de Port,13,NFC and trim
+la Marina del Prat Vermell,la Marina del Prat Vermell - AEI Zona Franca,12,explicit alias
+la Maternitat i Sant Ramon,la Maternitat i Sant Ramon,20,NFC and trim
+la Nova Esquerra de l'Eixample,la Nova Esquerra de l'Eixample,9,NFC and trim
+la Prosperitat,la Prosperitat,52,NFC and trim
+la Sagrada Família,la Sagrada Família,6,NFC and trim
+la Sagrera,la Sagrera,61,NFC and trim
+la Salut,la Salut,30,NFC and trim
+la Teixonera,la Teixonera,38,NFC and trim
+la Trinitat Nova,la Trinitat Nova,53,NFC and trim
+la Trinitat Vella,la Trinitat Vella,57,NFC and trim
+la Vall d'Hebron,la Vall d'Hebron,41,NFC and trim
+la Verneda i la Pau,la Verneda i la Pau,73,NFC and trim
+la Vila Olímpica del Poblenou,la Vila Olímpica del Poblenou,67,NFC and trim
+la Vila de Gràcia,la Vila de Gràcia,31,NFC and trim
+les Corts,les Corts,19,NFC and trim
+les Roquetes,les Roquetes,50,NFC and trim
+les Tres Torres,les Tres Torres,24,NFC and trim
