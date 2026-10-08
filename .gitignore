@@ -1,2 +1,6 @@
 .DS_Store
 *.log
+__MACOSX/
+data/raw/listings.csv
+data/raw/listings.csv.gz
+sql/real/02_import_real_data.sql
