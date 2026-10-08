@@ -29,39 +29,59 @@ our schema, normalization, and constraints with real market data.
 
 ```
 .
-├── README.md                               
-├── Database Project Pitch.mp4              
-├── Databases Project Pitch.png            
-├── .gitignore                              
+├── README.md
+├── requirements.txt                       Python packages (openpyxl)
+├── .gitignore
+├── media/
+│   ├── pitch_video.mp4                    Week 4 stakeholder video
+│   └── pitch_thumbnail.png                Thumbnail used in this README
 ├── data/
-│   ├── 2023_atles_renda_bruta_llar.csv     
-│   ├── neighborhood.csv                    
-│   └── neighborhood_income_2023.csv        
+│   ├── raw/
+│   │   └── 2023_atles_renda_bruta_llar.csv    Income source (CC BY 4.0)
+│   │                                          Airbnb and rent files are downloaded
+│   │                                          here by scripts/download_raw_data.py
+│   └── cleaned/                           Output of the cleaning scripts
+│       ├── city.csv, neighborhood.csv, host.csv, property.csv,
+│       │   host_property.csv, platform.csv, listing.csv,
+│       │   listing_snapshot.csv, housing_market_observation.csv
+│       ├── neighborhood_mapping.csv
+│       ├── neighborhood_income_2023.csv
+│       └── cleaning_summary.json
 ├── docs/
-│   ├── dataset_inspection.md               
-│   ├── erd.pdf                             
-│   ├── import_validation_queries.md        
-│   ├── income_dataset_addendum.md         
-│   ├── mapping_and_cleaning.md             
-│   ├── normalization.md                   
-│   └── sql_review.md                      
+│   ├── erd.pdf                            Entity relationship diagram
+│   ├── dataset_inspection.md              Sources, licenses, dates
+│   ├── mapping_and_cleaning.md            Column mapping, cleaning, schema changes
+│   ├── income_dataset_addendum.md         Third dataset (income)
+│   ├── normalization.md                   1NF, 2NF, 3NF checks
+│   ├── import_validation_queries.md       Import checks, original vs adapted queries
+│   ├── mysql_validation.md                Results of the MySQL run
+│   ├── queries.md                         Query catalogue (author, question, relevance)
+│   └── sql_review.md                      SQL review notes
 ├── results/
-│   ├── income_airbnb_comparison.csv       
-│   └── validation.json                    
+│   ├── validation.json                    Check results (SQLite reference)
+│   └── income_airbnb_comparison.csv       Output of adapted query 7
 ├── scripts/
-│   ├── clean_real_data.py                
-│   ├── generate_import.py                
-│   └── prepare_income_data.py           
+│   ├── download_raw_data.py               Downloads the Airbnb and rent files
+│   ├── clean_real_data.py                 Cleans raw data into data/cleaned/
+│   ├── prepare_income_data.py             Aggregates income to 73 neighborhoods
+│   ├── generate_import.py                 Builds the big INSERT file from data/cleaned/
+│   └── build_real_data.sh                 Runs all four scripts in order
 └── sql/
-    ├── 01_schema.sql                    
-    ├── 02_mock_data.sql                 
-    ├── 03_crud_operations.sql            
-    ├── 04_advanced_queries.sql        
-    ├── adapted_queries.sql             
-    ├── import_income_data.sql            
-    ├── original_queries.sql        
-    ├── real_data_schema.sql             
-    └── validation.sql                      
+    ├── mock/                              Weeks 1 to 4 (database airbnb_market)
+    │   ├── 01_schema.sql
+    │   ├── 02_mock_data.sql
+    │   ├── 03_crud_operations.sql
+    │   └── 04_advanced_queries.sql
+    ├── real/                              Weeks 5 and 6 (database airbnb_market_real)
+    │   ├── 01_real_data_schema.sql
+    │   ├── 02_import_real_data.sql        Generated file, not in git
+    │   ├── 03_import_income_data.sql
+    │   ├── 04_validation.sql
+    │   └── 05_constraint_tests.sql
+    └── queries/
+        ├── original_queries.sql           Week 3 queries, unchanged
+        ├── adapted_queries.sql            Queries adapted to the real data
+        └── team_queries.sql               New queries, one author per query
 ```
 
 ## 4. Entity overview
