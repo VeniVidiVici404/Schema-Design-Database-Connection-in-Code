@@ -94,3 +94,24 @@ Conclusion: no new 1NF–3NF violation was identified for the normalized importe
 - Cross-city regulation-area consistency and listing/host-property consistency are integrity rules beyond normalization; foreign keys alone do not enforce all such business relationships.
 
 The empty regulation tables cannot be empirically validated with these datasets. Their assessment relies on documented dependencies. Source assumptions are documented in import_validation_queries.md and the tasks 11–20 mapping report.
+
+## Week 6: violations found in the raw files and checks on the data
+
+| Raw file | Problem | Normal form broken | How we fixed it |
+|---|---|---|---|
+| listings.csv | Host name and host details repeat on every listing of that host | 2NF and 3NF | Separate host table, linked by host_id |
+| listings.csv | Neighborhood name repeats on every row | 3NF | Separate neighborhood table |
+| listings.csv | Price is text like $409.00, and some columns hold lists | 1NF | Price cleaned to a number, list columns split or dropped |
+| Rent workbook | Quarters are repeated columns (repeating groups) | 1NF | One row per neighborhood and date |
+| Income CSV | 1,068 census sections, more detail than we need | Granularity | Aggregated to 73 neighborhoods |
+
+We also checked that the cleaning did not create conflicts. cleaning_summary.json reports 0 conflicts.
+
+Three SQL checks at the end of sql/real/04_validation.sql test the result:
+1. The same source_host_id appears under two hosts.
+2. The same neighborhood_id and observation_date appear twice.
+3. The same neighborhood name appears under two ids.
+
+All three returned no rows on MySQL. This shows no host, no observation and no neighborhood is stored twice.
+
+Conclusion: the final schema is in 1NF, 2NF and 3NF. Every non-key column depends on the key, the whole key, and nothing but the key.

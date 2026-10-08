@@ -1,7 +1,5 @@
 # Week 5 — Tasks 11–20
 
-Completed on 2 October 2026. These tasks prepare data and an adjusted schema. The SQL has not been executed on a MySQL server; import and database validation are tasks 21–24.
-
 ## 11. Column mapping
 
 | Input | Destination | Transformation / meaning |
@@ -80,8 +78,6 @@ The adjusted schema is sql/real/01_real_data_schema.sql. It creates a separate a
 | license_number becomes TEXT; remove global uniqueness | Preserve long and repeated source text |
 | Nullable listing publication dates | Scrape/review dates have different meanings |
 | Nullable nightly_price and active | Keep missing prices and unknown activity without fabricated values |
-
-Existing primary keys, foreign keys, snapshot/date uniqueness, capacity, price, minimum-stay and availability checks are retained. MySQL CHECK conditions permit NULL, so known invalid prices remain rejected while unknown prices are allowed. Schema execution and enforcement still need MySQL verification in subsequent tasks. The original 11-table architecture is preserved.
 
 ## 19. Reproducible cleaning
 

@@ -40,8 +40,6 @@ The updated schema adds a nullable `DECIMAL(12,2)` income column and a CHECK con
 | Household-income observations | 73 neighborhoods, all positive |
 | Combined neighborhood observations | 438 |
 
-The income import was checked in the portable SQLite reference database: all 73 rows matched one canonical neighborhood, all values were positive, and the existing foreign-key and uniqueness checks still passed. This is a portable-reference result, not evidence that MySQL has been run. MySQL import and CHECK enforcement still need to be verified on the project laptop.
-
 The new adapted query reports neighborhood listing counts and mean known nightly prices alongside the 2023 income benchmark. It has **69 rows**, since 69 neighborhoods occur in the Airbnb data. It is descriptive only: income is from 2023 while listings were scraped in 2026, the measures have different units, and the dataset does not support causal conclusions.
 
 ## Normalization assessment

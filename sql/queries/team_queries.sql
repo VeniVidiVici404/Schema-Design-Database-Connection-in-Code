@@ -2,7 +2,7 @@ USE airbnb_market_real;
 
 -- =====================================================================
 -- TEAM QUERY 1
--- Author: <Alexandre Kupfermunz>
+-- Author: AlexandreKupfermunz (Alexandre)
 -- Question: In which neighborhoods does a typical household spend the
 --           largest share of its income on rent?
 -- Relevance: Rising rents push residents out. Comparing rent with income
@@ -29,7 +29,7 @@ ORDER BY rent_burden_pct_for_60m2 DESC;
 
 -- =====================================================================
 -- TEAM QUERY 2
--- Author: <Alexandre Kupfermunz>
+-- Author: AlexandreKupfermunz (Alexandre)
 -- Question: In which neighborhoods are most listings whole homes
 --           (not rooms)?
 -- Relevance: A whole home rented to tourists is a home that is not
@@ -51,7 +51,6 @@ HAVING COUNT(*) >= 30
 ORDER BY entire_home_share_pct DESC, total_listings DESC
 LIMIT 15;
 
-USE airbnb_market_real;
 
 -- =====================================================================
 -- TEAM QUERY 3
@@ -86,7 +85,6 @@ FROM host_counts
 GROUP BY host_group
 ORDER BY MIN(listing_count);
 
-USE airbnb_market_real;
 
 -- =====================================================================
 -- TEAM QUERY 4
@@ -187,4 +185,3 @@ WHERE l.room_type = 'entire_home'
 GROUP BY n.neighborhood_id, n.name, r.avg_rent_per_m2
 HAVING COUNT(*) >= 20
 ORDER BY breakeven_nights_per_month ASC;
-EOF

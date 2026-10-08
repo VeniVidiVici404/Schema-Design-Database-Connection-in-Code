@@ -1,5 +1,5 @@
 USE airbnb_market_real;
--- Run with: mysql --force -u <user> -p < sql/real/05_constraint_tests.sql
+-- Run with: mysql --force -u root   mysql -u root < sql/real/04_validation.sql -p < sql/real/05_constraint_tests.sql
 -- Everything is rolled back at the end, so no data is changed.
 START TRANSACTION;
 

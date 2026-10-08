@@ -30,11 +30,11 @@ Each query has the same documentation (Author, Question, Relevance) in its SQL f
 
 | ID | Author | Question | Relevance to the problem | Rows |
 |---|---|---|---|---|
-| T1 | AlexandreKupfermunz (Alexandre) | In which neighborhoods does a typical household spend the largest share of its income on rent? | Shows where housing is least affordable, which is where short-term rentals may add the most pressure | __ |
-| T2 | AlexandreKupfermunz (Alexandre) | In which neighborhoods are most listings whole homes? | A whole home rented to tourists is not available for residents | __ |
-| T3 | Matteo-RSV (Matteo) | How many listings are linked to hosts with few or many listings? | Shows how concentrated the listing supply is among hosts with several listings | __ |
-| T4 | Matteo-RSV (Matteo) | How does rent growth compare with Airbnb listing counts across neighborhoods? | Explores whether more tourist rentals go together with larger rent increases | __ |
-| T5 | VeniVidiVici404 (Manos) | In which neighborhoods do the most listings show no license number? | Shows where the city could check for possible illegal listings first | __ |
-| T6 | VeniVidiVici404 (Manos) | How many nights per month must a host rent out a whole home to earn the same as a long-term rent? | Shows how attractive tourist rentals are compared with renting to residents | __ |
+| T1 | AlexandreKupfermunz (Alexandre) | In which neighborhoods does a typical household spend the largest share of its income on rent? | Shows where housing is least affordable, which is where short-term rentals may add the most pressure | 68 |
+| T2 | AlexandreKupfermunz (Alexandre) | In which neighborhoods are most listings whole homes? | A whole home rented to tourists is not available for residents | 15 |
+| T3 | Matteo-RSV (Matteo) | How many listings are linked to hosts with few or many listings? | Shows how concentrated the listing supply is among hosts with several listings | 3 |
+| T4 | Matteo-RSV (Matteo) | How does rent growth compare with Airbnb listing counts across neighborhoods? | Explores whether more tourist rentals go together with larger rent increases | 68 |
+| T5 | VeniVidiVici404 (Manos) | In which neighborhoods do the most listings show no license number? | Shows where the city could check for possible illegal listings first | 15 |
+| T6 | VeniVidiVici404 (Manos) | How many nights per month must a host rent out a whole home to earn the same as a long-term rent? | Shows how attractive tourist rentals are compared with renting to residents | 44 |
 
 All six queries are descriptive. The limits of each query are written in its header in the SQL file.

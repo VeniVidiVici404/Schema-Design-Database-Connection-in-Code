@@ -182,7 +182,7 @@ All queries are listed in `docs/queries.md` with author, question, relevance to 
 |---|---|---|
 | `sql/queries/original_queries.sql` | Q1 to Q5 (Week 3, mock data) | Manos (VeniVidiVici404) |
 | `sql/queries/adapted_queries.sql` | A1 to A7 (adapted to real data, two of them cross-source) | Matteo (Matteo-RSV) |
-| | `sql/queries/team_queries.sql` | T1 to T6 (new queries on the real data) | Alexandre (T1, T2), Matteo (T3, T4), Manos (T5, T6) |
+| `sql/queries/team_queries.sql` | T1 to T6 (new queries on the real data) | Alexandre (T1, T2), Matteo (T3, T4), Manos (T5, T6) |
 
 Four of the 12 original and adapted queries return 0 rows on the real data (original Q1, Q4, Q5 and adapted Q4 and Q5). These are explained in the limitations below.
 

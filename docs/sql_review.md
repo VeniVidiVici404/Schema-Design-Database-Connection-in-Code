@@ -7,5 +7,3 @@ All seven adapted queries were executed against the combined SQLite reference da
 The original-query file is deliberately historical; its known logical limitations are preserved for before/after comparison. Do not describe it as the corrected production query file.
 
 The 73-row income import is generated from the open-data CSV by `scripts/prepare_income_data.py`. The 8.4 MB Airbnb/rent bulk import is generated serialization, not hand-written student SQL; follow the repository's existing plan to regenerate it from the cleaned CSVs instead of uploading it.
-
-Known limits remain: listing activity is unknown; there is one snapshot per listing; regulation data are absent; one minimum-stay value, 1,938 listing prices, 2,562 bedroom counts, and 21 rent values are unknown. Household income is an unweighted mean of census-section estimates for 2023; it is compared descriptively with listing prices observed in 2026. These limits do not support causal claims. MySQL behavior still requires a local run.
