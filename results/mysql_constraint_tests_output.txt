@@ -1,0 +1,7 @@
+ERROR 3819 (HY000) at line 7: Check constraint 'chk_snapshot_price' is violated.
+ERROR 3819 (HY000) at line 10: Check constraint 'chk_snapshot_availability' is violated.
+ERROR 3819 (HY000) at line 13: Check constraint 'chk_property_capacity' is violated.
+ERROR 1452 (23000) at line 16: Cannot add or update a child row: a foreign key constraint fails (`airbnb_market_real`.`property`, CONSTRAINT `fk_property_neighborhood` FOREIGN KEY (`neighborhood_id`) REFERENCES `neighborhood` (`neighborhood_id`) ON DELETE RESTRICT ON UPDATE CASCADE)
+ERROR 1062 (23000) at line 19: Duplicate entry '1-18674' for key 'listing.uq_listing_source'
+ERROR 3819 (HY000) at line 23: Check constraint 'chk_rent_positive' is violated.
+ERROR 3819 (HY000) at line 26: Check constraint 'chk_income_positive' is violated.

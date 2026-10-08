@@ -1,0 +1,119 @@
++----------------------------+-----------+
+| table_name                 | row_count |
++----------------------------+-----------+
+| city                       |         1 |
+| neighborhood               |        73 |
+| host                       |      4595 |
+| property                   |     15293 |
+| host_property              |     15293 |
+| platform                   |         1 |
+| listing                    |     15293 |
+| listing_snapshot           |     15293 |
+| housing_market_observation |       438 |
+| regulation                 |         0 |
+| regulation_area            |         0 |
++----------------------------+-----------+
++-------------------------------+------------+
+| check_name                    | violations |
++-------------------------------+------------+
+| property_neighborhood_orphans |          0 |
+| listing_property_orphans      |          0 |
+| listing_host_orphans          |          0 |
+| snapshot_listing_orphans      |          0 |
+| housing_neighborhood_orphans  |          0 |
+| invalid_capacity              |          0 |
+| invalid_price                 |          0 |
+| invalid_availability          |          0 |
+| invalid_minimum_stay          |          0 |
+| invalid_rent                  |          0 |
++-------------------------------+------------+
++------------------------+
+| unique_source_listings |
++------------------------+
+|                  15293 |
++------------------------+
++-----------------------------+
+| unique_housing_observations |
++-----------------------------+
+|                         438 |
++-----------------------------+
++----------------------+
+| known_positive_rents |
++----------------------+
+|                  344 |
++----------------------+
++-----------------------+
+| known_positive_prices |
++-----------------------+
+|                 13355 |
++-----------------------+
++------------------------+
+| missing_minimum_nights |
++------------------------+
+|                      1 |
++------------------------+
++----------------------------+----------------------------------+-----------------+
+| TABLE_NAME                 | CONSTRAINT_NAME                  | CONSTRAINT_TYPE |
++----------------------------+----------------------------------+-----------------+
+| city                       | PRIMARY                          | PRIMARY KEY     |
+| city                       | uq_city_name_country             | UNIQUE          |
+| host                       | PRIMARY                          | PRIMARY KEY     |
+| host                       | source_host_id                   | UNIQUE          |
+| host_property              | fk_hostproperty_host             | FOREIGN KEY     |
+| host_property              | fk_hostproperty_property         | FOREIGN KEY     |
+| host_property              | PRIMARY                          | PRIMARY KEY     |
+| housing_market_observation | chk_income_positive              | CHECK           |
+| housing_market_observation | chk_rent_positive                | CHECK           |
+| housing_market_observation | fk_observation_neighborhood      | FOREIGN KEY     |
+| housing_market_observation | PRIMARY                          | PRIMARY KEY     |
+| housing_market_observation | uq_observation_neighborhood_date | UNIQUE          |
+| listing                    | chk_listing_dates                | CHECK           |
+| listing                    | chk_listing_min_nights           | CHECK           |
+| listing                    | fk_listing_host                  | FOREIGN KEY     |
+| listing                    | fk_listing_platform              | FOREIGN KEY     |
+| listing                    | fk_listing_property              | FOREIGN KEY     |
+| listing                    | PRIMARY                          | PRIMARY KEY     |
+| listing                    | uq_listing_source                | UNIQUE          |
+| listing_snapshot           | chk_snapshot_price               | CHECK           |
+| listing_snapshot           | chk_snapshot_availability        | CHECK           |
+| listing_snapshot           | fk_snapshot_listing              | FOREIGN KEY     |
+| listing_snapshot           | PRIMARY                          | PRIMARY KEY     |
+| listing_snapshot           | uq_snapshot_listing_date         | UNIQUE          |
+| neighborhood               | chk_latitude                     | CHECK           |
+| neighborhood               | chk_longitude                    | CHECK           |
+| neighborhood               | fk_neighborhood_city             | FOREIGN KEY     |
+| neighborhood               | PRIMARY                          | PRIMARY KEY     |
+| neighborhood               | uq_neighborhood_census_code      | UNIQUE          |
+| neighborhood               | uq_neighborhood_city_name        | UNIQUE          |
+| platform                   | PRIMARY                          | PRIMARY KEY     |
+| platform                   | name                             | UNIQUE          |
+| property                   | chk_property_capacity            | CHECK           |
+| property                   | fk_property_neighborhood         | FOREIGN KEY     |
+| property                   | PRIMARY                          | PRIMARY KEY     |
+| regulation                 | chk_regulation_dates             | CHECK           |
+| regulation                 | fk_regulation_city               | FOREIGN KEY     |
+| regulation                 | PRIMARY                          | PRIMARY KEY     |
+| regulation_area            | fk_regarea_neighborhood          | FOREIGN KEY     |
+| regulation_area            | fk_regarea_regulation            | FOREIGN KEY     |
+| regulation_area            | PRIMARY                          | PRIMARY KEY     |
++----------------------------+----------------------------------+-----------------+
++----------------------------+
+| total_housing_observations |
++----------------------------+
+|                        438 |
++----------------------------+
++--------------------------+
+| income_observations_2023 |
++--------------------------+
+|                       73 |
++--------------------------+
++---------------------------------+
+| invalid_household_income_values |
++---------------------------------+
+|                               0 |
++---------------------------------+
++--------------------------------+
+| duplicate_income_neighborhoods |
++--------------------------------+
+|                              0 |
++--------------------------------+

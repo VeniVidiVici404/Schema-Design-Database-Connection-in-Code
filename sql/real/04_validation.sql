@@ -79,3 +79,15 @@ FROM (
     GROUP BY neighborhood_id
     HAVING COUNT(*) > 1
 ) AS duplicate_income_keys;
+-- Normalization checks on the real data. All three must return 0 rows.
+-- 2NF/3NF: one source host id must map to exactly one host row.
+SELECT source_host_id, COUNT(*) AS copies
+FROM host GROUP BY source_host_id HAVING COUNT(*) > 1;
+
+-- One observation per neighborhood and date.
+SELECT neighborhood_id, observation_date, COUNT(*) AS copies
+FROM housing_market_observation GROUP BY neighborhood_id, observation_date HAVING COUNT(*) > 1;
+
+-- A neighborhood name must not exist under two ids.
+SELECT name, COUNT(DISTINCT neighborhood_id) AS ids
+FROM neighborhood GROUP BY name HAVING COUNT(DISTINCT neighborhood_id) > 1;

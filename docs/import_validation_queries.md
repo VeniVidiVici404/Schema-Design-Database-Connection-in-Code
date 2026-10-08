@@ -2,7 +2,7 @@
 
 ## Execution status
 
-There is no MySQL client/server in the execution environment. Therefore, the MySQL schema, import and validation scripts are prepared but have not been executed against MySQL. A separate SQLite reference database was created, populated and tested. Its schema is a portability translation of the supplied MySQL schema; it is not a substitute for verifying MySQL-specific types, collations, ENUMs and behavior on your laptop.
+The scripts were executed on MySQL on 8 October 2026. See docs/mysql_validation.md for the results.
 
 The schema and data were checked in a portable SQLite reference database. The included `results/income_airbnb_comparison.csv` and `results/validation.json` are executed SQLite outputs; the SQL files target MySQL.
 

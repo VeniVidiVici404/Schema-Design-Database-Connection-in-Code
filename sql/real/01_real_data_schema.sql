@@ -95,7 +95,7 @@ CREATE TABLE regulation_area (
 -- ---------------------------------------------------------------------
 CREATE TABLE host (
     host_id             INT AUTO_INCREMENT PRIMARY KEY,
-    source_host_id      BIGINT UNSIGNED NULL UNIQUE, --C1: external Airbnb host ID
+    source_host_id      BIGINT UNSIGNED NULL UNIQUE, -- CHANGED C1: external Airbnb host ID
     host_type           ENUM('individual','professional','commercial') NULL, -- C2: was NOT NULL, now NULL allowed
     verified            BOOLEAN NULL, -- C2: was NOT NULL DEFAULT FALSE
     registration_date   DATE NULL, -- C2: was NOT NULL
