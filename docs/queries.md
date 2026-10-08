@@ -25,3 +25,16 @@ Each query has the same documentation (Author, Question, Relevance) in its SQL f
 | A5 | Matteo-RSV (Matteo) | How many listings have more unavailable days than the allowed nights? | Shows if rules could be checked | 0 (no regulation data) |
 | A6 | Matteo-RSV (Matteo) | How do listing prices compare with the latest rent? | Short-term prices against rent for residents | 243 |
 | A7 | Matteo-RSV (Matteo) | How do listing counts and prices relate to 2023 household income? | Who is affected by tourist rentals | 69 |
+
+## New queries (sql/queries/team_queries.sql)
+
+| ID | Author | Question | Relevance to the problem | Rows |
+|---|---|---|---|---|
+| T1 | AlexandreKupfermunz (Alexandre) | In which neighborhoods does a typical household spend the largest share of its income on rent? | Shows where housing is least affordable, which is where short-term rentals may add the most pressure | __ |
+| T2 | AlexandreKupfermunz (Alexandre) | In which neighborhoods are most listings whole homes? | A whole home rented to tourists is not available for residents | __ |
+| T3 | Matteo-RSV (Matteo) | How many listings are linked to hosts with few or many listings? | Shows how concentrated the listing supply is among hosts with several listings | __ |
+| T4 | Matteo-RSV (Matteo) | How does rent growth compare with Airbnb listing counts across neighborhoods? | Explores whether more tourist rentals go together with larger rent increases | __ |
+| T5 | VeniVidiVici404 (Manos) | In which neighborhoods do the most listings show no license number? | Shows where the city could check for possible illegal listings first | __ |
+| T6 | VeniVidiVici404 (Manos) | How many nights per month must a host rent out a whole home to earn the same as a long-term rent? | Shows how attractive tourist rentals are compared with renting to residents | __ |
+
+All six queries are descriptive. The limits of each query are written in its header in the SQL file.
