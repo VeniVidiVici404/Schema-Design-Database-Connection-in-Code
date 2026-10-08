@@ -1,14 +1,29 @@
 -- =====================================================================
--- Airbnb Housing Market Analysis Database
--- File: 01_schema.sql
--- Purpose: DDL — creates all tables, primary/foreign keys, constraints
--- DBMS: MySQL 8.0+
--- =====================================================================
--- How to run:
---   mysql -u <user> -p < 01_schema.sql
--- or open in MySQL Workbench and execute the whole script.
+-- Airbnb Housing Market Analysis Database (REAL DATA, Barcelona)
+-- File: sql/real/01_real_data_schema.sql
+-- Purpose: Final schema for the real datasets. It is based on
+--          sql/mock/01_schema.sql, which stays unchanged.
+-- DBMS: MySQL 8.0.16+ (CHECK constraints are enforced from this version)
+-- Run: mysql -u <user> -p < sql/real/01_real_data_schema.sql
+-- Note: It drops and recreates airbnb_market_real so it can be re-run.
+--       It never touches the mock database airbnb_market.
+--
+-- CHANGES compared to the mock schema (each is marked CHANGED below):
+--  C1 host.source_host_id added: keeps the Airbnb host ID.
+--  C2 host_type, verified, registration_date nullable: unknown is not false.
+--  C3 property_type is VARCHAR(100): 50 real categories, not 5.
+--  C4 bedrooms, street_address nullable: missing in the source.
+--  C5 ownership_type nullable: source gives a link, not a legal role.
+--  C6 listing.source_listing_id added and UNIQUE(platform_id, source_listing_id).
+--  C7 room_type gets hotel_room: 68 records in the source.
+--  C8 license_number is TEXT, no UNIQUE: long and repeated in the source.
+--  C9 first_listed_date, minimum_nights nullable: missing in the source.
+--  C10 nightly_price, active nullable: 1,938 prices missing, activity unknown.
+--  C11 housing_market_observation.avg_gross_household_income added.
+--  C12 CHECK rent > 0 and income > 0 (NULL still allowed).
 -- =====================================================================
 
+DROP DATABASE IF EXISTS airbnb_market_real;
 CREATE DATABASE airbnb_market_real CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE airbnb_market_real;
 
@@ -80,10 +95,10 @@ CREATE TABLE regulation_area (
 -- ---------------------------------------------------------------------
 CREATE TABLE host (
     host_id             INT AUTO_INCREMENT PRIMARY KEY,
-    source_host_id      BIGINT UNSIGNED NULL UNIQUE,
-    host_type           ENUM('individual','professional','commercial') NULL,
-    verified            BOOLEAN NULL,
-    registration_date   DATE NULL,
+    source_host_id      BIGINT UNSIGNED NULL UNIQUE, --C1: external Airbnb host ID
+    host_type           ENUM('individual','professional','commercial') NULL, -- C2: was NOT NULL, now NULL allowed
+    verified            BOOLEAN NULL, -- C2: was NOT NULL DEFAULT FALSE
+    registration_date   DATE NULL, -- C2: was NOT NULL
     country_origin      VARCHAR(100) NULL
 ) ENGINE=InnoDB;
 
@@ -93,10 +108,10 @@ CREATE TABLE host (
 CREATE TABLE property (
     property_id             INT AUTO_INCREMENT PRIMARY KEY,
     neighborhood_id         INT NOT NULL,
-    property_type           VARCHAR(100) NOT NULL,
-    bedrooms                TINYINT UNSIGNED NULL,
+    property_type           VARCHAR(100) NOT NULL, -- C3: was ENUM with 5 values
+    bedrooms                TINYINT UNSIGNED NULL, -- C4: was NOT NULL DEFAULT 0
     capacity                TINYINT UNSIGNED NOT NULL DEFAULT 1,
-    street_address          VARCHAR(255) NULL,
+    street_address          VARCHAR(255) NULL, -- C4: was NOT NULL
     price_per_m2_purchased  DECIMAL(10,2) NULL,
     CONSTRAINT fk_property_neighborhood
         FOREIGN KEY (neighborhood_id) REFERENCES neighborhood(neighborhood_id)
@@ -110,7 +125,7 @@ CREATE TABLE property (
 CREATE TABLE host_property (
     host_id             INT NOT NULL,
     property_id         INT NOT NULL,
-    ownership_type      ENUM('owner','manager','agent') NULL,
+    ownership_type      ENUM('owner','manager','agent') NULL, -- C5: was NOT NULL
     acquisition_date    DATE NULL,
     PRIMARY KEY (host_id, property_id),
     CONSTRAINT fk_hostproperty_host
@@ -134,17 +149,17 @@ CREATE TABLE platform (
 -- LISTING (a PROPERTY marketed by a HOST on a PLATFORM)
 -- ---------------------------------------------------------------------
 CREATE TABLE listing (
-    listing_id          INT AUTO_INCREMENT PRIMARY KEY,
-    source_listing_id   BIGINT UNSIGNED NULL,
+        listing_id          INT AUTO_INCREMENT PRIMARY KEY,
+        source_listing_id   BIGINT UNSIGNED NULL, -- C6: external Airbnb listing ID
     property_id         INT NOT NULL,
     host_id             INT NOT NULL,
     platform_id         INT NOT NULL,
-    room_type           ENUM('entire_home','private_room','shared_room','hotel_room') NOT NULL,
-    license_number      TEXT NULL,
-    first_listed_date   DATE NULL,
+    room_type           ENUM('entire_home','private_room','shared_room','hotel_room') NOT NULL, -- C7: added hotel_room
+    license_number      TEXT NULL, -- C8: was VARCHAR(50) with a UNIQUE key
+    first_listed_date   DATE NULL, -- C9: was NOT NULL
     last_listed_date    DATE NULL,
-    minimum_nights      SMALLINT UNSIGNED NULL,
-    UNIQUE KEY uq_listing_source (platform_id, source_listing_id),
+    minimum_nights      SMALLINT UNSIGNED NULL, -- C9: was NOT NULL DEFAULT 1
+    UNIQUE KEY uq_listing_source (platform_id, source_listing_id), -- C6: new key, replaces uq_listing_license
     CONSTRAINT fk_listing_property
         FOREIGN KEY (property_id) REFERENCES property(property_id)
         ON UPDATE CASCADE ON DELETE RESTRICT,
@@ -166,10 +181,10 @@ CREATE TABLE listing_snapshot (
     snapshot_id                 INT AUTO_INCREMENT PRIMARY KEY,
     listing_id                  INT NOT NULL,
     snapshot_date               DATE NOT NULL,
-    nightly_price                DECIMAL(8,2) NULL,
+    nightly_price               DECIMAL(8,2) NULL, -- C10: was NOT NULL (1,938 prices missing)
     available_days_next_365     SMALLINT UNSIGNED NULL,
-    active                       BOOLEAN NULL,
-    reviews_count                INT UNSIGNED NOT NULL DEFAULT 0,
+    active                      BOOLEAN NULL, -- C10: was NOT NULL DEFAULT TRUE (activity unknown)
+    reviews_count               INT UNSIGNED NOT NULL DEFAULT 0,
     CONSTRAINT fk_snapshot_listing
         FOREIGN KEY (listing_id) REFERENCES listing(listing_id)
         ON UPDATE CASCADE ON DELETE CASCADE,
@@ -183,19 +198,19 @@ CREATE TABLE listing_snapshot (
 -- ---------------------------------------------------------------------
 CREATE TABLE housing_market_observation (
     observation_id              INT AUTO_INCREMENT PRIMARY KEY,
-    neighborhood_id              INT NOT NULL,
-    observation_date             DATE NOT NULL,
-    avg_rent_per_m2               DECIMAL(8,2) NULL,
-    avg_gross_household_income    DECIMAL(12,2) NULL,
-    average_sale_price_per_m2    DECIMAL(10,2) NULL,
-    long_term_rental_units       INT UNSIGNED NULL,
-    relative_poverty_household   DECIMAL(5,2) NULL,
-    total_households              INT UNSIGNED NULL,
+    neighborhood_id             INT NOT NULL,
+    observation_date            DATE NOT NULL,
+    avg_rent_per_m2             DECIMAL(8,2) NULL,
+    avg_gross_household_income  DECIMAL(12,2) NULL, -- C11: new column (2023 income dataset)
+    average_sale_price_per_m2   DECIMAL(10,2) NULL,
+    long_term_rental_units      INT UNSIGNED NULL,
+    relative_poverty_household  DECIMAL(5,2) NULL,
+    total_households            INT UNSIGNED NULL,
     CONSTRAINT fk_observation_neighborhood
         FOREIGN KEY (neighborhood_id) REFERENCES neighborhood(neighborhood_id)
         ON UPDATE CASCADE ON DELETE CASCADE,
-    CONSTRAINT chk_rent_positive CHECK (avg_rent_per_m2 IS NULL OR avg_rent_per_m2 > 0),
-    CONSTRAINT chk_income_positive CHECK (avg_gross_household_income IS NULL OR avg_gross_household_income > 0),
+    CONSTRAINT chk_rent_positive CHECK (avg_rent_per_m2 IS NULL OR avg_rent_per_m2 > 0), -- C12: new
+    CONSTRAINT chk_income_positive CHECK (avg_gross_household_income IS NULL OR avg_gross_household_income > 0), -- C12: new
     UNIQUE KEY uq_observation_neighborhood_date (neighborhood_id, observation_date)
 ) ENGINE=InnoDB;
 
