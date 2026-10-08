@@ -1,7 +1,7 @@
 USE airbnb_market_real;
 
 -- =====================================================================
--- Q8
+-- TEAM QUERY 1
 -- Author: <Alexandre Kupfermunz>
 -- Question: In which neighborhoods does a typical household spend the
 --           largest share of its income on rent?
@@ -28,7 +28,7 @@ JOIN housing_market_observation rent
 ORDER BY rent_burden_pct_for_60m2 DESC;
 
 -- =====================================================================
--- Q9
+-- TEAM QUERY 2
 -- Author: <Alexandre Kupfermunz>
 -- Question: In which neighborhoods are most listings whole homes
 --           (not rooms)?

@@ -1,19 +1,24 @@
--- Historical Week 3 queries, preserved for comparison.
--- Known limitations and empty outputs are explained in docs/03_import_validation_queries.md.
+-- =====================================================================
+-- Original Week 3 queries (historical, kept for comparison)
+-- File: sql/queries/original_queries.sql
+-- Written by: Manos (VeniVidiVici404). The SQL is unchanged.
+-- These queries were written for the mock data. On the real Barcelona data
+-- some of them return no rows. The reasons are explained in
+-- docs/import_validation_queries.md, and the adapted versions are in
+-- sql/queries/adapted_queries.sql.
+-- Run after the real schema and the import (see README, section 5b).
+-- =====================================================================
 USE airbnb_market_real;
--- =====================================================================
--- Airbnb Housing Market Analysis Database
--- File: 04_advanced_queries.sql
--- Purpose: Advanced analytical queries showcasing joins, aggregation,
---          subqueries, and window functions.
--- Run after 01_schema.sql and 02_mock_data.sql.
--- =====================================================================
-
 
 
 -- =====================================================================
--- QUERY 1: Average nightly price and active listing count per neighborhood
--- (multi-table JOIN + GROUP BY + aggregate functions, most recent snapshot only)
+-- ORIGINAL QUERY 1 (original, Week 3)
+-- Author: VeniVidiVici404 (Manos)
+-- Question: Which neighborhoods have the highest average nightly price,
+--           and how many active listings do they have?
+-- Relevance: Shows where short-term rentals earn the most. A high price
+--            gives owners a reason to rent to tourists instead of residents.
+-- On the real data: 0 rows, because activity is unknown (see adapted Query 1).
 -- =====================================================================
 SELECT
     c.name                              AS city,
@@ -37,11 +42,13 @@ WHERE latest.active = TRUE
 GROUP BY c.name, n.name
 ORDER BY avg_nightly_price DESC;
 
-
 -- =====================================================================
--- QUERY 2: Hosts managing more than one property, with portfolio size
--- and total number of listings across platforms
--- (subquery/derived table + HAVING + aggregate join)
+-- ORIGINAL QUERY 2 (original, Week 3)
+-- Author: VeniVidiVici404 (Manos)
+-- Question: Which hosts manage more than one property, and how many
+--           listings do they have in total?
+-- Relevance: Hosts with many properties work like businesses. They can
+--            remove many homes from the housing market at once.
 -- =====================================================================
 SELECT
     h.host_id,
@@ -58,8 +65,11 @@ ORDER BY properties_owned DESC, total_listings DESC;
 
 
 -- =====================================================================
--- QUERY 3: Price ranking of listings within their own neighborhood
--- (window function: RANK() OVER PARTITION BY)
+-- ORIGINAL QUERY 3 (original, Week 3)
+-- Author: VeniVidiVici404 (Manos)
+-- Question: How does each listing rank on price inside its own neighborhood?
+-- Relevance: Shows the price spread in a neighborhood. The top-ranked
+--            listings are the ones that earn the most compared to local rents.
 -- =====================================================================
 SELECT
     n.name                    AS neighborhood,
@@ -84,9 +94,13 @@ ORDER BY n.name, price_rank_in_neighborhood;
 
 
 -- =====================================================================
--- QUERY 4: Month-over-month price growth per listing vs. neighborhood
--- long-term rent growth, comparing April -> June 2024
--- (CTEs + window function LAG + join across fact tables)
+-- ORIGINAL QUERY 4 (original, Week 3)
+-- Author: VeniVidiVici404 (Manos)
+-- Question: Do listing prices grow faster or slower than the long-term
+--           rent in the same neighborhood?
+-- Relevance: This is the core worry of residents: do tourist prices and
+--            rents rise together?
+-- On the real data: 0 rows, because each listing has only one snapshot (see adapted Query 4).
 -- =====================================================================
 WITH listing_growth AS (
     SELECT
@@ -125,10 +139,13 @@ ORDER BY neighborhood, l.listing_id, lg.snapshot_date;
 
 
 -- =====================================================================
--- QUERY 5: Neighborhoods under an active regulation together with the
--- number of listings that would violate an annual_night_limit
--- (based on estimated nights booked = 365 - available_days_next_365)
--- (M:N join through the junction table + correlated subquery + CASE)
+-- ORIGINAL QUERY 5 (original, Week 3)
+-- Author: VeniVidiVici404 (Manos)
+-- Question: In neighborhoods under a regulation, how many listings go
+--           over the allowed number of nights per year?
+-- Relevance: Shows if rules on tourist rentals are followed. This is what
+--            a city needs to protect housing for residents.
+-- On the real data: 0 rows, because no regulation data is loaded (see adapted Query 5).
 -- =====================================================================
 SELECT
     n.name                     AS neighborhood,
