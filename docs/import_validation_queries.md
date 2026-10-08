@@ -16,7 +16,7 @@ Import totals: 1 city, 73 neighborhoods, 4,595 hosts, 15,293 accommodation recor
 
 The combined SQLite database passed 30 recorded checks, including table counts, referential integrity, numeric bounds, unique source IDs, and seven deliberately invalid updates rolled back after verifying rejection: negative price, availability 366, capacity zero, orphan neighborhood reference, duplicate platform/listing identity, zero known rent, and zero known income. SQLite PRAGMA integrity_check returned ok and foreign_key_check returned no rows. These tests are recorded in results/validation.json; they do not establish MySQL's enforcement behavior.
 
-No data were discarded to bypass constraints. Unknown values remain NULL, including 1 minimum stay, 1,938 prices, 2,562 bedroom counts, 21 rents, and activity flags. There are 15,293 unique source listing IDs, 344 positive rent observations, and 73 positive 2023 household-income observations. The income values are simple unweighted means of 1,068 census-section estimates; see docs/05_income_dataset_addendum.md.
+No data were discarded to bypass constraints. Unknown values remain NULL, including 1 minimum stay, 1,938 prices, 2,562 bedroom counts, 21 rents, and activity flags. There are 15,293 unique source listing IDs, 344 positive rent observations, and 73 positive 2023 household-income observations. The income values are simple unweighted means of 1,068 census-section estimates; see docs/income_dataset_addendum.md.
 
 ## 25–27. Original and adapted queries
 
@@ -40,14 +40,14 @@ The latest available rent period is Q1 2026 for every neighborhood; June/July li
 
 ## Files and reproducibility
 
-- 01_real_data_schema.sql: final MySQL schema.
-- 02_import_real_data.sql: ready-to-run normalized data inserts.
-- 03_original_queries.sql: original advanced queries with only the target database name changed.
-- 04_adapted_queries.sql: seven adapted and cross-source queries.
-- 05_validation.sql: MySQL diagnostics and expected counts.
-- 06_import_income_data.sql: 73 neighborhood income observations; run once after the base import.
+- sql/real/01_real_data_schema.sql: final MySQL schema.
+- sql/real/02_import_real_data.sql: ready-to-run normalized data inserts.
+- sql/queries/original_queries.sql: original advanced queries with only the target database name changed.
+- sql/queries/adapted_queries.sql: seven adapted and cross-source queries.
+- sql/real/04_validation.sql: MySQL diagnostics and expected counts.
+- sql/real/03_import_income_data.sql: 73 neighborhood income observations; run once after the base import.
 - scripts/prepare_income_data.py: rebuilds the 73-row import from the source CSV and canonical neighborhood table.
-- docs/05_income_dataset_addendum.md: source, cleaning, aggregation, integration, and normalization details.
+- docs/income_dataset_addendum.md: source, cleaning, aggregation, integration, and normalization details.
 - results/: aggregate income comparison and validation summary.
 
 The Week 3 CRUD script contains writes/deletes and hard-coded mock IDs. It was not run against real records. Its read-only examples should be adapted separately; this report's comparison covers the five original analytical examples and seven adapted queries.

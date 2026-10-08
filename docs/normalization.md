@@ -41,7 +41,7 @@ attribute rather than directly on the primary key. For example,
 table, referenced via foreign key.
 
 ## Result
-The final schema (implemented in [`../sql/01_schema.sql`](../sql/01_schema.sql))
+The final schema (implemented in [`../sql/mock/01_schema.sql`](../sql/mock/01_schema.sql))
 has one clear "single source of truth" per entity, avoids redundant storage,
 and prevents the update/insertion/deletion anomalies described above, while
 still supporting the joins needed for market analysis queries.
@@ -93,4 +93,4 @@ Conclusion: no new 1NF–3NF violation was identified for the normalized importe
 - Future collection may require historizing mutable host/listing/property attributes. Temporal modelling completeness is distinct from 3NF.
 - Cross-city regulation-area consistency and listing/host-property consistency are integrity rules beyond normalization; foreign keys alone do not enforce all such business relationships.
 
-The empty regulation tables cannot be empirically validated with these datasets. Their assessment relies on documented dependencies. Source assumptions are documented in 03_import_validation_queries.md and the tasks 11–20 mapping report.
+The empty regulation tables cannot be empirically validated with these datasets. Their assessment relies on documented dependencies. Source assumptions are documented in import_validation_queries.md and the tasks 11–20 mapping report.

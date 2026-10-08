@@ -30,7 +30,7 @@ The income measure is written to `housing_market_observation.avg_gross_household
 
 ## Integration and validation
 
-The updated schema adds a nullable `DECIMAL(12,2)` income column and a CHECK constraint that rejects non-positive known income while allowing NULL. The existing import remains unchanged; run `06_import_income_data.sql` after importing the Airbnb and rent data. The supplied preparation script regenerates the 73-row CSV and SQL insert file from the original CSV and canonical neighborhood table.
+The updated schema adds a nullable `DECIMAL(12,2)` income column and a CHECK constraint that rejects non-positive known income while allowing NULL. The existing import remains unchanged; run `sql/real/03_import_income_data.sql` after importing the Airbnb and rent data. The supplied preparation script regenerates the 73-row CSV and SQL insert file from the original CSV and canonical neighborhood table.
 
 | Integrated facts | Rows |
 |---|---:|
@@ -53,7 +53,7 @@ The new value is a neighborhood-level measure recorded by reference period. It d
 From the repository root, after the source files are in the locations named below:
 
 ```bash
-python scripts/prepare_income_data.py data/2023_atles_renda_bruta_llar.csv data/cleaned/neighborhood.csv data/neighborhood_income_2023.csv sql/06_import_income_data.sql
+python scripts/prepare_income_data.py data/raw/2023_atles_renda_bruta_llar.csv data/cleaned/neighborhood.csv data/cleaned/neighborhood_income_2023.csv sql/real/03_import_income_data.sql
 ```
 
-For MySQL, run the revised `sql/01_real_data_schema.sql`, `sql/02_import_real_data.sql`, and then `sql/06_import_income_data.sql`. Run `sql/05_validation.sql` and the seven adapted queries in `sql/04_adapted_queries.sql`. The income import should only be run once per fresh database.
+For MySQL, run the revised `sql/real/01_real_data_schema.sql`, `sql/real/02_import_real_data.sql`, and then `sql/real/03_import_income_data.sql`. Run `sql/real/04_validation.sql` and the seven adapted queries in `sql/queries/adapted_queries.sql`. The income import should only be run once per fresh database.

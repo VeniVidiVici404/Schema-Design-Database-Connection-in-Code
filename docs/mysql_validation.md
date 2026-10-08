@@ -38,12 +38,12 @@ listing_snapshot still has 15,293 rows afterwards.
 ## Problem found only in MySQL
 
 MySQL needs a space after the comment marker. The comment `--C1` in
-01_real_data_schema.sql caused ERROR 1064. SQLite accepted it.
+sql/real/01_real_data_schema.sql caused ERROR 1064. SQLite accepted it.
 We fixed it to `-- CHANGED C1`.
 
 ## Differences between SQLite and MySQL
 
 The row counts of all 7 adapted queries are identical in MySQL and SQLite.
-The only difference found was the comment syntax in 01_real_data_schema.sql (see above).
+The only difference found was the comment syntax in sql/real/01_real_data_schema.sql (see above).
 
 Raw outputs: results/mysql_validation_output.txt and results/mysql_constraint_tests_output.txt

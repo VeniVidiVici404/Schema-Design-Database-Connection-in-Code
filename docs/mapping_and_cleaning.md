@@ -66,7 +66,7 @@ Rent extraction uses 2025 Q1–Q4 and 2026 Q1, neighborhood rows only, standalon
 
 ## 17–18. Schema changes
 
-The adjusted schema is sql/01_real_data_schema.sql. It creates a separate airbnb_market_real database, leaving the original project's files and database intact. It intentionally fails if that database already exists; it contains no DROP DATABASE. Do not run the old mock-data or CRUD scripts against this real-data schema.
+The adjusted schema is sql/real/01_real_data_schema.sql. It creates a separate airbnb_market_real database, leaving the original project's files and database intact. It starts with DROP DATABASE IF EXISTS airbnb_market_real, so it can be run again safely. Do not run the old mock-data or CRUD scripts against this real-data schema.
 
 | Change | Reason |
 |---|---|
@@ -111,4 +111,4 @@ The workflow was rerun into a separate output folder and all output file bytes c
 
 - Inside Airbnb data dictionary (price, source IDs, dates, availability definitions): https://docs.google.com/spreadsheets/d/1iWCNJcSutYqpULSQHlNyGInUvHg2BoUGoNRIGa6Szc4/edit
 - Inside Airbnb assumptions (availability and location limitations): https://insideairbnb.com/data-assumptions/
-- Source and licensing documentation: docs/01_dataset_inspection.md. Its zero-rent and currency statements are corrected by this report.
+- Source and licensing documentation: docs/dataset_inspection.md. Its zero-rent and currency statements are corrected by this report.
